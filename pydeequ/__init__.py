@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You
@@ -11,16 +12,18 @@
 # ANY KIND, either express or implied. See the License for the specific
 # language governing permissions and limitations under the License.
 """Placeholder docstrings"""
-
-
+__version__ = "1.0.1"
 
 from pyspark.sql import SparkSession
-from pydeequ.profiles import ColumnProfilerRunner
+
 from pydeequ.analyzers import AnalysisRunner
 from pydeequ.checks import Check, CheckLevel
+from pydeequ.configs import set_deequ_maven_config
+from pydeequ.profiles import ColumnProfilerRunner
 
-deequ_maven_coord = "com.amazon.deequ:deequ:1.0.3"
+deequ_maven_coord = set_deequ_maven_config()
 f2j_maven_coord = "net.sourceforge.f2j:arpack_combined_all"
+
 
 class PyDeequSession:
     """
